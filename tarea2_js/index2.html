@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavAScript</title>
+    <script>
+        var cantones = new Array("Otavalo", "Ibarra", "Antonio Ante", "Pimampiro", "Cotacachi", "Urcuqui");
+
+        var contador = 0;
+
+        function Cantones() {
+            if (contador == cantones.length) {
+                contador = 0;
+
+            }
+            return cantones[contador++];
+
+        }
+
+        var posterior = 0;
+        var nuevo = "";
+        function MostrarCantones() {
+            nuevo += cantones[posterior] + " , ";
+            document.getElementById("texto").innerHTML = nuevo;
+            posterior++;
+            if (posterior == cantones.length) {
+                posterior = 0;
+                nuevo = "";
+            }
+        }
+
+        var listacantones = "<ul>";
+        function ListadoCantones() {
+            for (var i = 0; i < cantones.length; i++) {
+                listacantones += "<li>" + cantones[i] + "</li>";
+
+            }
+            listacantones += "</ul>";
+            return listacantones;
+        }
+
+        function listaCantonesWhile() {
+            var i = 0;
+            while (i < cantones.length) {
+                listacantones += "<li>" + cantones[i] + "</li>"
+                i++;
+            }
+            listacantones += "</ul>"
+            return listacantones
+        }
+
+        function listaforin() {
+            for (var x in cantones) {
+                cantones.sort()
+                listcan += "<li>" + cantones[x] + "</li>"
+                listcan += "</ul>"
+                document.getElementById("texto").innerHTML = listcan;
+            }
+
+        }
+        function listaforof() {
+            cantones.sort()
+            for (var x of cantones) {
+                document.write("<li>" + x + "</li>")
+            }
+
+        }
+
+    </script>
+
+
+</head>
+
+
+<body>
+    <h1>Cantones</h1>
+
+    <div class="form-group">
+        <h2>
+            <p id="texto"></p>
+        </h2>
+        <button onclick="document.getElementById('texto').innerHTML=Cantones()">Mostrar Canton</button>
+    </div>
+    </br>
+    <div class="form-group">
+        <button onclick="MostrarCantones()">Listar cantones</button>
+    </div>
+    </br>
+    <div class="form-group">
+        <button onclick="document.getElementById('texto').innerHTML=ListadoCantones()">Listado Cantones</button>
+    </div>
+    </br>
+    <div class="form-group">
+        <button onclick="document.getElementById('texto').innerHTML=listaCantonesWhile()">Listado Cantones While</button>
+    </div>
+
+    <div class="form-group">
+        <button onclick="listaforof()">lista cantones ordenados</button>
+    </div>
+
+
+</body>
+
+</html>

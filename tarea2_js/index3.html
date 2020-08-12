@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScrit</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #0f0f0a;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ee632c;
+        }
+    </style>
+
+    <script>
+        function CrearTabla() {
+            // Obtener la referencia del elemento body
+            var body = document.getElementsByTagName("body")[0];
+
+            // Crea un elemento <table> y un elemento <tbody>
+            var tabla = document.createElement("table");
+            var tblBody = document.createElement("tbody");
+
+            // Crea las celdas
+            for (var i = 0; i < 5; i++) {
+                // Crea las hileras de la tabla
+                var hilera = document.createElement("tr");
+
+                for (var j = 0; j < 2; j++) {
+                    // Crea un elemento <td> y un nodo de texto, haz que el nodo de
+                    // texto sea el contenido de <td>, ubica el elemento <td> al final
+                    // de la hilera de la tabla
+                    var celda = document.createElement("td");
+                    var textoCelda = document.createTextNode("FILA  " + i + ",COLUMNA " + j);
+                    celda.appendChild(textoCelda);
+                    hilera.appendChild(celda);
+                }
+
+                // agrega la hilera al final de la tabla (al final del elemento tblbody)
+                tblBody.appendChild(hilera);
+            }
+
+            // posiciona el <tbody> debajo del elemento <table>
+            tabla.appendChild(tblBody);
+            // appends <table> into <body>
+            body.appendChild(tabla);
+            // modifica el atributo "border" de la tabla y lo fija a "2";
+            tabla.setAttribute("border", "2");
+
+        }
+    </script>
+    <script>
+
+        var aum = 1;
+
+        function CambiarTamañoParrafo() {
+            aum +=0.1;
+            document.getElementById("parrafo1").style.fontSize = aum + "em";
+            document.getElementById("parrafo2").style.fontSize = aum + "em";
+            document.getElementById("parrafo3").style.fontSize = aum + "em";
+            document.getElementById("parrafo4").style.fontSize = aum + "em";
+            document.getElementById("parrafo5").style.fontSize = aum + "em";
+        }
+    </script>
+
+</head>
+
+<body>
+    <div style="width: 30%; height: 50%;">
+        <button onclick="CrearTabla()">Crear tabla</button>
+    </div>
+
+    <div id="div1">
+        <p id="parrafo1">Texto de prueba parrafo</p>
+        <p id="parrafo2">Texto de prueba parrafo</p>
+        <p id="parrafo3">Texto de prueba parrafo</p>
+        <p id="parrafo4">Texto de prueba parrafo</p>
+        <p id="parrafo5">Texto de prueba parrafo</p>
+    </div>
+
+    <button onclick="CambiarTamañoParrafo()">Tamaño de parrafo</button>
+
+</body>
+
+</html>

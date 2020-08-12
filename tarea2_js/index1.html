@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script src="funciones1.js"></script>
+    <script>
+        function cambiarEtiquetah4() {
+            //DOM
+            document.getElementById("diego").innerHTML = "Mi fecha de nacimiento es: 17 de Mayo del 1992 ";
+        }
+    </script>
+    <script>
+        function cambiarColorEtiquetah4() {
+            //DOM
+            document.getElementById("diego").style.color = '#FF0000';
+        }
+    </script>
+    <script>
+        function AlinearParrafoDerecha() {
+            //DOM
+            document.getElementById("div1").style = "text-align:right";
+        }
+    </script>
+    <script>
+        function AlinearParrafoIzquierda() {
+            //DOM
+            document.getElementById("div1").style = "text-align:left";
+        }
+    </script>
+    <script>
+        function AlinearParrafoCetro() {
+            //DOM
+            document.getElementById("div1").style = "text-align:center";
+        }
+    </script>
+    <script>
+
+        var aum=1;
+
+        function CambiarTamañoletra() {
+            aum+=2;
+            document.getElementById("parrafo1").style.fontSize = aum+"em"; 
+        }
+    </script>
+
+<script>
+
+    function OcultarLetraDiv() {
+        document.getElementById("parrafo1").style.display = "none"; 
+    }
+</script>
+</head>
+
+<body>
+    <h4 id="diego">DIEGO CARLOSAMA</h4>
+
+    <div id="div1">
+        <p id="parrafo1">Texto de prueba derecha</p>
+        <p id="parrafo2">Texto de pruea izquierda</p>
+        <p id="parrafo3">Texto de prueba centro</p>
+    </div>
+
+    <script>
+        document.getElementById("diego").innerHTML = "DIEGO CARLOSAMA";
+    </script>
+    <script>
+        document.getElementById("diego").innerHTML = "DIEGO CARLOSAMA";
+    </script>
+  
+
+    <button onclick="cambiarEtiquetah4()">cambiar fecha</button>
+    <button onclick="cambiarColorEtiquetah4()">cambiar Color</button>
+    <button onclick="AlinearParrafoDerecha()">Alinear derecha</button>
+    <button onclick="AlinearParrafoIzquierda()">Alinear Izquierda</button>
+    <button onclick="AlinearParrafoCetro()">Alinear Centro</button>
+    <button onclick="CambiarTamañoletra()">Tamaño de Letra</button>
+    <button onclick="OcultarLetraDiv()">Ocultar</button>
+
+    </button>
+</body>
+
+</html>
